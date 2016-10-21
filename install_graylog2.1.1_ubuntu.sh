@@ -206,8 +206,8 @@ echo "Starting graylog2-server"
 service graylog2-server start
 
 # Waiting for Graylog2-Server to start accepting requests on tcp/12900
-echo "Waiting for Graylog2-Server to start!"
-while ! nc -vz localhost 12900; do sleep 1; done
+#echo "Waiting for Graylog2-Server to start!"
+#while ! nc -vz localhost 12900; do sleep 1; done
 
 # Install graylog2 web interface
 echo "Installing graylog2-web-interface"
