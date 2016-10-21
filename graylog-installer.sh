@@ -56,13 +56,13 @@ sed -i -e 's|password_secret =|password_secret = '$pass_secret'|' /etc/graylog/s
 #root_pass_sha2=$(echo -n password123 | shasum -a 256)
 admin_pass_hash=$(echo -n $adminpass|sha256sum|awk '{print $1}')
 sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_pass_hash|" /etc/graylog/server/server.conf
-sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
-sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
-sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 192.168.1.203:9300|elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|' /etc/graylog/server/server.conf
+#sed -i -e 's|elasticsearch_shards = 4|elasticsearch_shards = 1|' /etc/graylog/server/server.conf
+#sed -i -e 's|mongodb_useauth = true|mongodb_useauth = false|' /etc/graylog/server/server.conf
+#sed -i -e 's|#elasticsearch_discovery_zen_ping_multicast_enabled = false|elasticsearch_discovery_zen_ping_multicast_enabled = false|' /etc/graylog/server/server.conf
+#sed -i -e 's|#elasticsearch_discovery_zen_ping_unicast_hosts = 192.168.1.203:9300|elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300|' /etc/graylog/server/server.conf
 
 # Setting new retention policy setting or Graylog2 Server will not start
-sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
+#sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
 
 # This setting is required as of v0.20.2 in /etc/graylog2.conf
 sed -i -e 's|#rest_transport_uri = http://192.168.1.1:12900/|rest_transport_uri = http://127.0.0.1:12900/|' /etc/graylog/server/server.conf
