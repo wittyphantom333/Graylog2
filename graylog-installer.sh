@@ -1,9 +1,3 @@
-set -e
-# Setup logging
-# Logs stderr and stdout to separate files.
-exec 2> >(tee "./graylog2/install_graylog2.err")
-exec > >(tee "./graylog2/install_graylog2.log")
-
 # Setup Pause function
 function pause(){
    read -p "$*"
