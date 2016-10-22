@@ -65,8 +65,8 @@ sed -i -e "s|root_password_sha2 =|root_password_sha2 = $admin_pass_hash|" /etc/g
 #sed -i 's|retention_strategy = delete|retention_strategy = close|' /etc/graylog/server/server.conf
 
 # This setting is required as of v0.20.2 in /etc/graylog2.conf
-sed -i -e 's|rest_listen_uri = http://127.0.0.1:9000/api/|rest_listen_uri = http://$IPADDY:12900/|' /etc/graylog/server/server.conf
-sed -i -e 's|#web_listen_uri = http://127.0.0.1:9000/|web_listen_uri = http://$IPADDY:9000/|' /etc/graylog/server/server.conf
+sed -i -e 's|rest_listen_uri = http://127.0.0.1:9000/api/|rest_listen_uri = http://'$IPADDY':12900/|' /etc/graylog/server/server.conf
+sed -i -e 's|#web_listen_uri = http://127.0.0.1:9000/|web_listen_uri = http://'$IPADDY':9000/|' /etc/graylog/server/server.conf
 
 
 sudo systemctl daemon-reload
