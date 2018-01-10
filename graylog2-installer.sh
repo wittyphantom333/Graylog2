@@ -16,7 +16,7 @@ function pause(){
 
 # Detect IP Address
 echo "Detecting IP Address"
-IPADDY="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+IPADDY="$(ifconfig | grep -A 1 'ens160' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
 echo "Detected IP Address is $IPADDY"
 
 SERVERNAME=$IPADDY
