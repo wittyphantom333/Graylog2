@@ -38,8 +38,8 @@ systemctl enable elasticsearch.service
 systemctl restart elasticsearch.service
 
 # Install Graylog
-wget https://packages.graylog2.org/repo/packages/graylog-2.1-repository_latest.deb
-dpkg -i graylog-2.1-repository_latest.deb
+wget https://packages.graylog2.org/repo/packages/graylog-2.4-repository_latest.deb
+dpkg -i graylog-2.4-repository_latest.deb
 apt-get update && sudo apt-get install graylog-server
 
 
